@@ -14,9 +14,24 @@ minetest.register_node("icemod:dream", {
 
 minetest.register_craft({
     type = "shapeless",
-    output = "icemod:dream",
+    output = "icemod:dream 64",
     recipe = {
         "default:dirt", "default:dirt", "default:dirt", "default:dirt",
+    },
+})
+
+minetest.register_craftitem("icemod:mese_stick", {
+    description = "Mese Stick",
+    inventory_image = "mese_stick.png"
+})
+
+minetest.register_craft({
+    type = "shaped",
+    output = "icemod:mese_stick",
+    recipe = {
+        { "", "default:mese_block", "" },
+        { "", "default:mese_block", "" },
+        { "", "default:mese_block", "" },
     },
 })
 
@@ -34,6 +49,16 @@ minetest.register_tool("icemod:friendly_hug", {
             },
         },
         damage_groups = { fleshy = 25 },
+    },
+})
+
+minetest.register_craft({
+    type = "shaped",
+    output = "icemod:friendly_hug",
+    recipe = {
+        { "", "icemod:mese_stick", "" },
+        { "", "icemod:mese_stick", "" },
+        { "", "icemod:mese_stick", "" },
     },
 })
 
@@ -64,5 +89,15 @@ minetest.register_tool("icemod:pickaxe_of_god", {
             },
         },
         damage_groups = { fleshy = 2 },
+    },
+})
+
+minetest.register_craft({
+    type = "shaped",
+    output = "icemod:pickaxe_of_god",
+    recipe = {
+        { "default:mese_block", "default:mese_block", "default:mese_block" },
+        { "", "default:stick", ""},
+        { "", "default:stick", ""},
     },
 })
